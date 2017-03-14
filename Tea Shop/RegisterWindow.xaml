@@ -1,0 +1,21 @@
+﻿<Window x:Class="Tea_Shop.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tea_Shop"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="300" Width="300">
+    <Grid>
+        <Button x:Name="button" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="157,239,10,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="regLoginField" HorizontalAlignment="Center" Height="23" Margin="0,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="regNameField" HorizontalAlignment="Center" Height="23" Margin="0,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="regPasswordField" HorizontalAlignment="Center" Height="23" Margin="0,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="regKeyField" HorizontalAlignment="Center" Height="23" Margin="0,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Введите свой логин" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.651,0.498"/>
+        <Label x:Name="label_Copy" Content="Введите свое имя" HorizontalAlignment="Center" Margin="0,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.651,0.498"/>
+        <Label x:Name="label_Copy1" Content="Введите свой пароль" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.651,0.498"/>
+        <Label x:Name="label_Copy2" Content="Введите ключ администратора (если есть)" HorizontalAlignment="Center" Margin="0,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.651,0.498" Width="244" Height="26"/>
+
+    </Grid>
+</Window>
