@@ -25,10 +25,22 @@ namespace Tea_Shop
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void registerButton_Click(object sender, RoutedEventArgs e)
         {
             RegisterWindow regWin = new RegisterWindow();
             regWin.Show();
+
+        }
+
+
+        private void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserWindow userWin = new UserWindow();
+            userWin.Show();
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }

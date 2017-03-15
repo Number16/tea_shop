@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="Чайный магазин" Height="240" Width="360">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="23" Margin="116,65,116,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Roboto" ToolTip="Введите свой логин"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="23" Margin="116,65,116,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Roboto" ToolTip="Введите свой логин" TextChanged="textBox_TextChanged"/>
         <Label x:Name="label" Content="Введите свои логин и пароль" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="21,8,21,0" FontFamily="Roboto" FontSize="16"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Center" Height="23" Margin="116,120,116,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Введите свой пароль" FontFamily="Roboto"/>
-        <Button x:Name="Войти" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76" Margin="138,157,138,0" RenderTransformOrigin="1.262,0.763"/>
-        <Button x:Name="button" Content="Регистрация" HorizontalAlignment="Left" Margin="267,179,0,0" VerticalAlignment="Top" Width="75" FontFamily="Roboto" FontSize="10" Background="White" BorderBrush="White" Click="button_Click"/>
+        <Button x:Name="loginButton" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76" Margin="138,157,138,0" RenderTransformOrigin="1.262,0.763" Click="loginButton_Click"/>
+        <Button x:Name="registerButton" Content="Регистрация" HorizontalAlignment="Left" Margin="267,179,0,0" VerticalAlignment="Top" Width="75" FontFamily="Roboto" FontSize="10" Background="White" BorderBrush="White" Click="registerButton_Click"/>
         <Label x:Name="label1" Content="Логин" HorizontalAlignment="Left" Margin="116,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.43,2.59"/>
         <Label x:Name="label1_Copy" Content="Пароль" HorizontalAlignment="Left" Margin="116,93,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.43,2.59"/>
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,24 @@ namespace Tea_Shop
     /// </summary>
     public partial class RegisterWindow : Window
     {
+        string FileName = "userlist.txt";
         public RegisterWindow()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                User.ReadUsers(FileName);
+            } catch
+            {
+                MessageBox.Show("Ошибка загрузки файла");
+            }
+        }
+
+       
+
+        private void regLoginField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

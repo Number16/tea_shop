@@ -8,7 +8,7 @@
         Title="Регистрация" Height="300" Width="300">
     <Grid>
         <Button x:Name="button" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="157,239,10,0" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="regLoginField" HorizontalAlignment="Center" Height="23" Margin="0,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="regLoginField" HorizontalAlignment="Center" Height="23" Margin="0,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="regLoginField_TextChanged"/>
         <TextBox x:Name="regNameField" HorizontalAlignment="Center" Height="23" Margin="0,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="regPasswordField" HorizontalAlignment="Center" Height="23" Margin="0,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="regKeyField" HorizontalAlignment="Center" Height="23" Margin="0,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
