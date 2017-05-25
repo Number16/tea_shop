@@ -18,6 +18,8 @@ namespace Tea_Shop
     /// <summary>
     /// Interaction logic for TeaWindow.xaml
     /// </summary>
+    /// 
+    [Serializable]
     public partial class TeaWindow : Window
     {
         public TeaWindow()
@@ -86,6 +88,35 @@ namespace Tea_Shop
             this.Close();
             AddTeaWindow addTeaWin = new AddTeaWindow();
             addTeaWin.Show();
+        }
+
+        private void searchTeaButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(searchTeaBox.Text) == true)
+            {
+                MessageBox.Show("Заполните поле");
+            }
+            else
+            {
+                bool found = false;
+                List<Tea> searchTeaRes = new List<Tea>();
+                for (int i = 0; i < Tea.TeaList.Count; i++)
+                {
+                    if (Tea.TeaList[i].Name.Contains(searchTeaBox.Text) || Tea.TeaList[i].Descriprion.Contains(searchTeaBox.Text) || Tea.TeaList[i].Type.Contains(searchTeaBox.Text))
+                    {
+                        searchTeaRes.Add(Tea.TeaList[i]);
+                        found = true;
+                    }
+                }
+                for (int i = 0; i < searchTeaRes.Count; i++)
+                {
+                    MessageBox.Show("Название " + searchTeaRes[i].Name + " Описание " + searchTeaRes[i].Descriprion + " Сорт " + searchTeaRes[i].Type);
+                }
+                if (found == false)
+                {
+                    MessageBox.Show("Чай не найден");
+                }
+            }
         }
     }
 }

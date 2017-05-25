@@ -18,6 +18,8 @@ namespace Tea_Shop
     /// <summary>
     /// Логика взаимодействия для RegisterWindow.xaml
     /// </summary>
+    /// 
+    [Serializable]
     public partial class RegisterWindow : Window
     {
         

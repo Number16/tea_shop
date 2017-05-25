@@ -19,6 +19,14 @@ namespace Tea_Shop
     /// <summary>
     /// Логика взаимодействия для UserWindow.xaml
     /// </summary>
+    /// 
+
+
+    public class Tasks : ObservableCollection<Task>
+    {
+
+    }
+    [Serializable]
     public partial class UserWindow : Window
     {
         public UserWindow()
@@ -76,7 +84,31 @@ namespace Tea_Shop
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(searchUserBox.Text) == true)
+            {
+                MessageBox.Show("Заполните поле");
+            }
+            else
+            {
+                bool found = false;
+                List<User> searchUserRes = new List<User>();
+                for (int i = 0; i < User.UserList.Count; i++)
+                {
+                    if (User.UserList[i].Login.Contains(searchUserBox.Text) || User.UserList[i].Name.Contains(searchUserBox.Text) || User.UserList[i].Password.Contains(searchUserBox.Text))
+                    {
+                        searchUserRes.Add(User.UserList[i]);
+                        found = true;
+                    }
+                }
+                for (int i = 0; i < searchUserRes.Count; i++)
+                {
+                    MessageBox.Show("Логин " + searchUserRes[i].Login + " Имя " + searchUserRes[i].Name + " Пароль " + searchUserRes[i].Password);
+                }
+                if (found == false)
+                {
+                    MessageBox.Show("Пользователь не найден");
+                }
+            }
         }
 
         
@@ -89,6 +121,13 @@ namespace Tea_Shop
         private void backUserButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+       
+
+        private void CollectionViewSource_Filter(object sender, FilterEventArgs e)
+        {
+
         }
     }
 }

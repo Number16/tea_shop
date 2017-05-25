@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tea_Shop
 {
+    [Serializable]
     class User
     {
         private string _login;

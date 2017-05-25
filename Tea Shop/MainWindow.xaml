@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tea_Shop"
         mc:Ignorable="d"
-        Title="Чайный магазин" Height="240" Width="552.353">
+        Title="Чайный магазин" Height="264.706" Width="552.353">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="53*"/>
@@ -19,8 +19,8 @@
         <Label x:Name="label1" Content="Логин" HorizontalAlignment="Left" Margin="72,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.43,2.59" Grid.Column="1"/>
         <Label x:Name="label1_Copy" Content="Пароль" HorizontalAlignment="Left" Margin="72,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.43,2.59" Grid.Column="1"/>
         <Button x:Name="teaLoginButton" Content="Каталог" HorizontalAlignment="Center" Margin="0,155,116,0" VerticalAlignment="Top" Width="120" Grid.Column="1" Click="teaLoginButton_Click"/>
-        <TextBox x:Name="textBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="123,287,0,-101" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
-        <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="205,240,0,-54" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged"/>
+        <TextBox x:Name="textBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="123,287,0,-101" TextWrapping="Wrap" Text="Пасхалочка" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="205,240,0,-54" TextWrapping="Wrap" Text="Это" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged"/>
 
     </Grid>
 </Window>

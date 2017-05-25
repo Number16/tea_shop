@@ -12,6 +12,8 @@
         <Button x:Name="deleteTeaButton" Content="Удалить сорт" HorizontalAlignment="Left" Margin="595,312,0,0" VerticalAlignment="Top" Width="100" Click="deleteTeaButton_Click"/>
         <Button x:Name="saveTeaButton" Content="Сохранить" HorizontalAlignment="Left" Margin="595,287,0,0" VerticalAlignment="Top" Width="100" Click="saveTeaButton_Click"/>
         <Button x:Name="callAddWindow" Content="Добавить" HorizontalAlignment="Left" Margin="595,261,0,0" VerticalAlignment="Top" Width="100" Click="callAddWindow_Click"/>
+        <Button x:Name="searchTeaButton" Content="Поиск" HorizontalAlignment="Left" Margin="10,261,0,0" VerticalAlignment="Top" Width="75" Click="searchTeaButton_Click"/>
+        <TextBox x:Name="searchTeaBox" HorizontalAlignment="Left" Height="23" Margin="90,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264"/>
 
     </Grid>
 </Window>

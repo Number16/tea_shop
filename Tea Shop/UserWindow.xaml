@@ -7,12 +7,17 @@
         mc:Ignorable="d"
         Title="UserWindow" Height="512.857" Width="520
         ">
-    
+    <Window.Resources>
+        <local:Tasks x:Key="tasks"/>
+        <CollectionViewSource x:Key="cvsTasks" Source="{StaticResource tasks}" Filter="CollectionViewSource_Filter">
+            
+        </CollectionViewSource>
+    </Window.Resources>
     <Grid>
         <DataGrid x:Name="userGrid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="369" Width="492" SelectionChanged="userGrid_SelectionChanged" Loaded="userGrid_Loaded" CanUserAddRows="True" CanUserDeleteRows="True"/>
         <Button x:Name="backUserButton" Content="Назад" HorizontalAlignment="Left" Margin="10,452,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.507,3.1" Click="backUserButton_Click"/>
         <Button x:Name="removeUserButton" Content="Удалить пользователя" HorizontalAlignment="Left" Margin="348,452,0,0" VerticalAlignment="Top" Width="154" Click="removeButton_Click"/>
-        <Button x:Name="searchUserButton" Content="Поиск" HorizontalAlignment="Left" Margin="430,533,-72,-71" VerticalAlignment="Top" Width="154" Click="searchButton_Click"/>
+        <Button x:Name="searchUserButton" Content="Поиск" HorizontalAlignment="Left" Margin="10,416,0,0" VerticalAlignment="Top" Width="62" Click="searchButton_Click"/>
         <Button x:Name="saveUserButton" Content="Сохранить" HorizontalAlignment="Left" Margin="348,416,0,0" VerticalAlignment="Top" Width="154" Click="saveButton_Click" RenderTransformOrigin="0.117,-4.1"/>
         <Button x:Name="editUserButton" Content="Button" HorizontalAlignment="Left" Margin="285,515,0,-53" VerticalAlignment="Top" Width="75" Click="editButton_Click"/>
         <TextBox x:Name="searchUserBox" HorizontalAlignment="Left" Height="23" Margin="10,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="492" TextChanged="searchBox_TextChanged" TextAlignment="Center"/>
