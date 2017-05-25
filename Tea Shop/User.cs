@@ -46,9 +46,10 @@ namespace Tea_Shop
             _hasEditAccess = hasEditAccess;
         }
 
+
+        public static bool IsAdmin = false;
         public static string UserFile = "../../data/u.txt";
         public static List<User> UserList;
-
         public static List<User> ReadUsers(string _fileName)
         {
 

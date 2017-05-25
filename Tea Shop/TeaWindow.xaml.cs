@@ -28,6 +28,19 @@ namespace Tea_Shop
                 Tea.TeaList = Tea.ReadTea(Tea.TeaFile);
                 teaGrid.ItemsSource = null;
                 teaGrid.ItemsSource = Tea.TeaList;
+                if (User.IsAdmin == false)
+                {
+                    saveTeaButton.IsEnabled = false;
+                    deleteTeaButton.IsEnabled = false;
+                    callAddWindow.IsEnabled = false;
+                    teaGrid.IsReadOnly = true;
+                } else
+                {
+                    saveTeaButton.IsEnabled = true;
+                    deleteTeaButton.IsEnabled = true;
+                    callAddWindow.IsEnabled = true;
+                    teaGrid.IsReadOnly = false;
+                }
             }
             catch
             {
@@ -66,6 +79,13 @@ namespace Tea_Shop
                 Tea.TeaList.Remove(Tea.TeaList[teaGrid.SelectedIndex]);
                 teaGrid.Items.Refresh();
             }
+        }
+
+        private void callAddWindow_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            AddTeaWindow addTeaWin = new AddTeaWindow();
+            addTeaWin.Show();
         }
     }
 }

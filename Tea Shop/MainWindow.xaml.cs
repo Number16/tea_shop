@@ -21,6 +21,7 @@ namespace Tea_Shop
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,7 +45,6 @@ namespace Tea_Shop
 
         }
 
-        public static bool isAdmin;
 
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
@@ -99,8 +99,40 @@ namespace Tea_Shop
 
         private void teaLoginButton_Click(object sender, RoutedEventArgs e)
         {
-            TeaWindow teaWin = new TeaWindow();
-            teaWin.Show();
+
+            bool found = false;
+
+            for (int i = 0; i < User.UserList.Count; i++)
+            {
+                if (loginBox.Text == User.UserList[i].Login)
+                {
+                    if (passwordBox.Text == User.UserList[i].Password)
+                    {
+                        if (User.UserList[i].HasEditAccess == true)
+                        {
+                            found = true;
+                            User.IsAdmin = true;
+                            TeaWindow teaWin = new TeaWindow();
+                            teaWin.Show();
+                        }
+                        else
+                        {
+                            found = true;
+                            User.IsAdmin = false;
+                            TeaWindow teaWin = new TeaWindow();
+                            teaWin.Show();
+                        }
+                    }
+                }
+
+            }
+            if (found == false)
+            {
+                MessageBox.Show("Неверные логин или пароль");
+            }
+
+
+            
         }
     }
 }

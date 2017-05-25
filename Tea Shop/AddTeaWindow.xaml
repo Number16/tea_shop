@@ -1,0 +1,22 @@
+﻿<Window x:Class="Tea_Shop.AddTeaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tea_Shop"
+        mc:Ignorable="d"
+        Title="AddTeaWindow" Height="297.479" Width="149.159">
+    <Grid>
+        <TextBox x:Name="teaNameBox" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="teaDescBox" HorizontalAlignment="Left" Height="23" Margin="10,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="teaTypeBox" HorizontalAlignment="Left" Height="23" Margin="10,129,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="teaPriceBox" HorizontalAlignment="Left" Height="23" Margin="10,178,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top" RenderTransformOrigin="1.006,1.893"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,59,0,0" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top" RenderTransformOrigin="1.006,1.893"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,108,0,0" TextWrapping="Wrap" Text="Сорт" VerticalAlignment="Top" RenderTransformOrigin="1.006,1.893"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,157,0,0" TextWrapping="Wrap" Text="Цена" VerticalAlignment="Top" RenderTransformOrigin="1.006,1.893"/>
+        <Button x:Name="cancelTeaButton" Content="Отмена" HorizontalAlignment="Left" Margin="56,236,0,0" VerticalAlignment="Top" Width="75" Click="cancelTeaButton_Click"/>
+        <Button x:Name="addTeaButton" Content="Добавить" HorizontalAlignment="Left" Margin="56,211,0,0" VerticalAlignment="Top" Width="75" Click="addTeaButton_Click"/>
+
+    </Grid>
+</Window>
