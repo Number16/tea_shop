@@ -20,16 +20,17 @@ namespace Tea_Shop
     /// </summary>
     public partial class RegisterWindow : Window
     {
-        string FileName = "userlist.txt";
+        
         public RegisterWindow()
         {
+            InitializeComponent();
             try
             {
-                InitializeComponent();
-                User.ReadUsers(FileName);
+                User.UserList = User.ReadUsers(User.UserFile);
             } catch
             {
-                MessageBox.Show("Ошибка загрузки файла");
+                MessageBox.Show("Список пользователей не найден, создание нового...");
+                File.Create("../../data/u.txt");
             }
         }
 
@@ -38,6 +39,51 @@ namespace Tea_Shop
         private void regLoginField_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void regButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (regKeyField.Text == "" || regLoginField.Text == "" || regPasswordField.Text == "")
+                {
+                    MessageBox.Show("Заполните все поля");
+                }
+                else
+                {
+                    if (regKeyField.Text == "methylamine")
+                    {
+                        User.UserList.Add(new User(regLoginField.Text, regNameField.Text, regPasswordField.Text, true));
+                    }
+                    else
+                    {
+                        User.UserList.Add(new User(regLoginField.Text, regNameField.Text, regPasswordField.Text, false));
+                    }
+                    User.SaveData(User.UserFile, User.UserList);
+                    MessageBox.Show("Пользователь добавлен");
+                    this.Close();
+                }
+                
+            } catch
+            {
+                MessageBox.Show("Проверьте корректность ввода");
+            }
+            
+        }
+
+        private void regNameField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void regPasswordField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void regKeyField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }

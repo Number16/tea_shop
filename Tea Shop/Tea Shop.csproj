@@ -59,10 +59,9 @@
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tea.cs" />
-    <Compile Include="TeaCatalogue.xaml.cs">
-      <DependentUpon>TeaCatalogue.xaml</DependentUpon>
+    <Compile Include="TeaWindow.xaml.cs">
+      <DependentUpon>TeaWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TeaSort.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
@@ -83,7 +82,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TeaCatalogue.xaml">
+    <Page Include="TeaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

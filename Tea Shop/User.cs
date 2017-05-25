@@ -45,7 +45,9 @@ namespace Tea_Shop
             _password = password;
             _hasEditAccess = hasEditAccess;
         }
-        public static List<User> UserList = ReadUsers("userlist.txt");
+
+        public static string UserFile = "../../data/u.txt";
+        public static List<User> UserList;
 
         public static List<User> ReadUsers(string _fileName)
         {
@@ -56,17 +58,15 @@ namespace Tea_Shop
                 while (sr.EndOfStream == false)
                 {
                     var row = sr.ReadLine();
-                    var words = row.Split(',');
-                    User u = new User(null, null, null, false);
-                    for (int i = 0; i < words.Length; i++)
-                    {
-                        u = new User(words[0], words[1], words[2], bool.Parse(words[3]));
+                    var words = row.Split(':');
+                        User u = new User(words[0], words[1], words[2], bool.Parse(words[3]));
+                        _userList.Add(u);
                         
-                    }
-                    _userList.Add(u);
 
                 }
+                
             }
+
 
             return _userList;
         }

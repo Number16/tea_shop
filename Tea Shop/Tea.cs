@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,42 @@ namespace Tea_Shop
             _description = description;
             _type = type;
             _price = price;
+        }
+
+        public static string TeaFile = "../../data/t.txt";
+        public static List<Tea> TeaList;
+
+        public static List<Tea> ReadTea(string _fileName)
+        {
+
+            List<Tea> _teaList = new List<Tea>();
+            using (var sr = new StreamReader(_fileName))
+            {
+                while (sr.EndOfStream == false)
+                {
+                    var row = sr.ReadLine();
+                    var words = row.Split(':');
+                    Tea t = new Tea(words[0], words[1], words[2], double.Parse(words[3]));
+                    _teaList.Add(t);
+
+
+                }
+
+            }
+
+
+            return _teaList;
+        }
+
+        public static void SaveData(string _fileName, List<Tea> _teaList)
+        {
+            using (var sw = new StreamWriter(_fileName))
+            {
+                foreach (var tea in _teaList)
+                {
+                    sw.WriteLine($"{tea.Name}:{tea.Descriprion}:{tea.Type}:{tea.Price}");
+                }
+            }
         }
 
     }

@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tea_Shop"
         mc:Ignorable="d"
-        Title="Чайный магазин" Height="240" Width="360">
+        Title="Чайный магазин" Height="240" Width="552.353">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="23" Margin="116,65,116,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Roboto" ToolTip="Введите свой логин" TextChanged="textBox_TextChanged"/>
-        <Label x:Name="label" Content="Введите свои логин и пароль" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="21,8,21,0" FontFamily="Roboto" FontSize="16"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Center" Height="23" Margin="116,120,116,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Введите свой пароль" FontFamily="Roboto"/>
-        <Button x:Name="loginButton" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76" Margin="138,157,138,0" RenderTransformOrigin="1.262,0.763" Click="loginButton_Click"/>
-        <Button x:Name="registerButton" Content="Регистрация" HorizontalAlignment="Left" Margin="267,179,0,0" VerticalAlignment="Top" Width="75" FontFamily="Roboto" FontSize="10" Background="White" BorderBrush="White" Click="registerButton_Click"/>
-        <Label x:Name="label1" Content="Логин" HorizontalAlignment="Left" Margin="116,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.43,2.59"/>
-        <Label x:Name="label1_Copy" Content="Пароль" HorizontalAlignment="Left" Margin="116,93,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.43,2.59"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="123*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="loginBox" HorizontalAlignment="Center" Height="23" Margin="0,65,116,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Roboto" ToolTip="Введите свой логин" TextChanged="textBox_TextChanged" Grid.Column="1"/>
+        <Label x:Name="label" Content="Введите свои логин и пароль" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,145,0" FontFamily="Roboto" FontSize="16" Grid.Column="1"/>
+        <TextBox x:Name="passwordBox" HorizontalAlignment="Center" Height="23" Margin="0,120,116,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Введите свой пароль" FontFamily="Roboto" Grid.Column="1" TextChanged="textBox1_TextChanged"/>
+        <Button x:Name="loginButton" Content="Пользователи" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0,180,116,0" RenderTransformOrigin="1.262,0.763" Click="loginButton_Click" Grid.Column="1"/>
+        <Button x:Name="registerButton" Content="Регистрация" HorizontalAlignment="Left" Margin="295,184,0,0" VerticalAlignment="Top" Width="75" FontFamily="Roboto" FontSize="10" Background="White" BorderBrush="White" Click="registerButton_Click" Grid.Column="1"/>
+        <Label x:Name="label1" Content="Логин" HorizontalAlignment="Left" Margin="72,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.43,2.59" Grid.Column="1"/>
+        <Label x:Name="label1_Copy" Content="Пароль" HorizontalAlignment="Left" Margin="72,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.43,2.59" Grid.Column="1"/>
+        <Button x:Name="teaLoginButton" Content="Каталог" HorizontalAlignment="Center" Margin="0,155,116,0" VerticalAlignment="Top" Width="120" Grid.Column="1" Click="teaLoginButton_Click"/>
+        <TextBox x:Name="textBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="123,287,0,-101" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="205,240,0,-54" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged"/>
 
     </Grid>
 </Window>

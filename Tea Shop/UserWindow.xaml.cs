@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,23 +24,34 @@ namespace Tea_Shop
         public UserWindow()
         {
             InitializeComponent();
+            
         }
-        private void userGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void userGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
         
-        private void userGrid_Loaded(object sender, RoutedEventArgs e)
+        public void userGrid_Loaded(object sender, RoutedEventArgs e)
         {
             
-            userGrid.ItemsSource = User.UserList;
+
+
+            
+            {
+                try
+                {
+                    User.UserList = User.ReadUsers(User.UserFile);
+                    userGrid.ItemsSource = User.UserList;
+                }
+                catch
+                {
+                    MessageBox.Show("Список пользователей не найден, создание нового...");
+                    File.Create("../../data/u.txt");
+                }
+            }
         }
 
-        private void editButton_Click(object sender, RoutedEventArgs e)
-        {
-            User.UserList = userGrid.Items.Cast<User>().ToList();
-            User.SaveData("u.txt", User.UserList);
-        }
+
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -48,6 +60,35 @@ namespace Tea_Shop
                 User.UserList.Remove(User.UserList[userGrid.SelectedIndex]);
                 userGrid.Items.Refresh();
             }
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            User.UserList = userGrid.Items.Cast<User>().ToList();
+            User.SaveData(User.UserFile, User.UserList);
+            MessageBox.Show("Данные успешно сохранены");
+        }
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
+
+        private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void backUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
